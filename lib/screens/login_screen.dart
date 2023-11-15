@@ -72,6 +72,7 @@ class LoginScreen extends ConsumerWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: R.sw(20, context)),
                 child: TextFormField(
+                  controller: emailController,
                   cursorColor: primaryColor,
                   decoration: const InputDecoration(
                       prefixIcon: Icon(Icons.email), hintText: "Email"),
@@ -84,6 +85,7 @@ class LoginScreen extends ConsumerWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: R.sw(20, context)),
                 child: TextFormField(
+                  controller: passwordController,
                   obscureText: true,
                   cursorColor: primaryColor,
                   decoration: const InputDecoration(

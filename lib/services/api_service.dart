@@ -14,6 +14,7 @@ class ApiService {
   Future<ApiModel?> getAllNews() async {
     try {
       Response response = await dio.get('');
+      log(response.statusCode.toString());
       if (response.statusCode == 200) {
         var jsonResponse = jsonEncode(response.data);
         return apiModelFromJson(jsonResponse);
@@ -27,6 +28,7 @@ class ApiService {
   Future<ApiModel?> getCountryNews() async {
     try {
       Response response = await dio.get('&countries=in');
+      log("Country:${response.statusCode}");
       if (response.statusCode == 200) {
         var jsonResponse = jsonEncode(response.data);
         return apiModelFromJson(jsonResponse);
@@ -40,6 +42,7 @@ class ApiService {
   Future<ApiModel?> searchApi(String searchitem) async {
     try {
       Response response = await dio.get('&keywords=$searchitem');
+      log("Search:${response.statusCode}");
       if (response.statusCode == 200) {
         var jsonResponse = jsonEncode(response.data);
         return apiModelFromJson(jsonResponse);
